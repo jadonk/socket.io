@@ -36,7 +36,7 @@
 		this._xhr = this._request(+ new Date, 'GET');
 		this._xhr.onreadystatechange = function(){
 			var status;
-			if (self._xhr.readyState == 4){
+			if (self._xhr && self._xhr.readyState == 4){
 				self._xhr.onreadystatechange = empty;
 				try { status = self._xhr.status; } catch(e){}
 				if (status == 200){

@@ -25,7 +25,7 @@
 			}
 		} else {
 			this._xhr.onreadystatechange = function(){
-				if (self._xhr.readyState == 3) self._onData(self._xhr.responseText);
+				if (self._xhr && self._xhr.readyState == 3) self._onData(self._xhr.responseText);
 			};
 		}
 		this._xhr.send(null);

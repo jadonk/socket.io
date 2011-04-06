@@ -754,6 +754,8 @@ JSONPPolling.prototype._get = function(){
 	script.onerror = function(){
 		self._onDisconnect();
 	};
+    if (!this._insertAt || !this._insertAt.parentNode)
+        return; //@todo add error reporting or retries here?
 	this._insertAt.parentNode.insertBefore(script, this._insertAt);
 	this._script = script;
 };
